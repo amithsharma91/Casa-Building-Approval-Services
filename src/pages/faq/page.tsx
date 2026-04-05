@@ -33,16 +33,16 @@ const faqs = [
 
 export default function FAQPage() {
   const [open, setOpen] = useState<number | null>(0);
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://example.com";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://buildingapprovalservices.com";
 
   useEffect(() => {
     document.title =
-      "FAQ \u2013 GHMC Building Permission & TG-BPASS Hyderabad | Casa Associates";
+      "FAQ \u2013 Building Approval Services Hyderabad | GHMC Permission & TG-BPASS | Casa Associates";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc)
       metaDesc.setAttribute(
         "content",
-        "Frequently asked questions about GHMC building permission, TG-BPASS / BuildNow approval, and HMDA layout permission in Hyderabad. Expert answers from Casa Associates \u2014 500+ approvals, 98% success rate."
+        "Frequently asked questions about building approval services in Hyderabad — GHMC building permission, TG-BPASS / BuildNow approval & HMDA layout permission. Expert answers from Casa Associates. 500+ approvals, 98% success rate."
       );
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.setAttribute("href", `${siteUrl}/faq`);
