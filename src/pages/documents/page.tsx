@@ -50,16 +50,16 @@ const documents = [
 ];
 
 export default function DocumentsPage() {
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://example.com";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://buildingapprovalservices.com";
 
   useEffect(() => {
     document.title =
-      "Documents for GHMC Building Permission Hyderabad | Complete Checklist | Casa Associates";
+      "Documents for Building Approval Services Hyderabad | GHMC Permission Checklist | Casa Associates";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc)
       metaDesc.setAttribute(
         "content",
-        "Complete document checklist for GHMC building permission and HMDA layout approval in Hyderabad. Sale deed, EC, architect plan, property tax \u2014 Casa Associates guides you through every requirement."
+        "Complete document checklist for building approval services in Hyderabad — GHMC building permission, HMDA layout approval & TG-BPASS. Sale deed, EC, architect plan, property tax receipt & more. Casa Associates guides you."
       );
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.setAttribute("href", `${siteUrl}/documents`);
