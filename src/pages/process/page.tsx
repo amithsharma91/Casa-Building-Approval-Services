@@ -50,16 +50,16 @@ const steps = [
 ];
 
 export default function ProcessPage() {
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://example.com";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://buildingapprovalservices.com";
 
   useEffect(() => {
     document.title =
-      "GHMC Building Permission Process Hyderabad | TG-BPASS Steps | Casa Associates";
+      "Building Approval Process Hyderabad | GHMC Permission & TG-BPASS Steps | Casa Associates";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc)
       metaDesc.setAttribute(
         "content",
-        "Step-by-step GHMC building permission and TG-BPASS / BuildNow approval process in Hyderabad. Casa Associates handles all 7 steps \u2014 from document checking to approval certificate issuance."
+        "Step-by-step building approval services process in Hyderabad — GHMC building permission & TG-BPASS / BuildNow approval. Casa Associates handles all 7 steps from document checking to approval certificate issuance."
       );
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.setAttribute("href", `${siteUrl}/process`);
