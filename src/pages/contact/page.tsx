@@ -7,16 +7,16 @@ import { useJsonLd } from "../../hooks/useJsonLd";
 const WA_LINK = "https://wa.me/919000975046?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20";
 
 export default function ContactPage() {
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://example.com";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://buildingapprovalservices.com";
 
   useEffect(() => {
     document.title =
-      "Contact Casa Associates | Building Approval Services Hyderabad | Free Consultation";
+      "Contact Us | Building Approval Services Hyderabad | Free Consultation | Casa Associates";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc)
       metaDesc.setAttribute(
         "content",
-        "Contact Casa Associates for GHMC building permission and TG-BPASS / BuildNow approval services in Hyderabad. Call +91 90009 75046 or chat on WhatsApp for free consultation within minutes."
+        "Contact Casa Associates for building approval services in Hyderabad — GHMC building permission, TG-BPASS / BuildNow approvals & HMDA layout permission. Call +91 90009 75046 or WhatsApp for free consultation."
       );
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.setAttribute("href", `${siteUrl}/contact`);
