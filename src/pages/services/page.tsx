@@ -80,12 +80,12 @@ const whyChoose = [
 ];
 
 export default function ServicesPage() {
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://example.com";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://buildingapprovalservices.com";
 
   useEffect(() => {
-    document.title = "Building Approval Services Hyderabad | GHMC, HMDA, TG-BPASS | Casa Associates";
+    document.title = "Building Approval Services Hyderabad | GHMC, HMDA, TG-BPASS / BuildNow | Casa Associates";
     const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Casa Associates offers complete building approval services in Hyderabad — GHMC building permission, HMDA layout approval, TG-BPASS applications, occupancy certificates, TDR services, and road widening checks.");
+    if (meta) meta.setAttribute("content", "Complete building approval services in Hyderabad — GHMC building permission, HMDA layout approval, TG-BPASS / BuildNow applications, occupancy certificates, TDR services & road widening checks. 500+ approvals, 98% success.");
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.setAttribute("href", `${siteUrl}/services`);
     window.scrollTo(0, 0);
