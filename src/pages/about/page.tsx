@@ -20,16 +20,16 @@ const whyTrust = [
 ];
 
 export default function AboutPage() {
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://example.com";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://buildingapprovalservices.com";
 
   useEffect(() => {
     document.title =
-      "About Casa Associates | GHMC Building Permission Experts Hyderabad";
+      "About Casa Associates | Building Approval Services Hyderabad | GHMC Experts";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc)
       metaDesc.setAttribute(
         "content",
-        "Casa Associates \u2014 15+ years of GHMC, HMDA & TG-BPASS / BuildNow approval expertise in Hyderabad. 500+ successful building approvals with 98% success rate. Trusted building permission consultancy."
+        "Casa Associates \u2014 15+ years of expert building approval services in Hyderabad. GHMC, HMDA & TG-BPASS / BuildNow approvals with 500+ successful projects and 98% success rate. Trusted consultancy."
       );
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.setAttribute("href", `${siteUrl}/about`);
