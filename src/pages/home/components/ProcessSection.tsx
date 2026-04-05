@@ -1,38 +1,48 @@
 const steps = [
   {
     num: "01",
-    title: "Document Checking",
-    desc: "Our experts review all your property documents — Sale Deed, EC, property tax receipts — to verify legal clarity and identify any gaps.",
+    title: "Verifying the Documents",
+    desc: "Our experts thoroughly verify all your property documents — Sale Deed, EC, property tax receipts, and title documents — to ensure legal clarity before proceeding.",
   },
   {
     num: "02",
     title: "Building Plan Drafting",
-    desc: "A licensed architect prepares the building plan in compliance with GHMC setback rules, FAR norms, and TG-BPASS guidelines.",
+    desc: "A licensed architect prepares the building plan in full compliance with GHMC setback rules, FAR norms, and applicable building regulations.",
   },
   {
     num: "03",
-    title: "TG-BPASS Submission",
-    desc: "The complete application is submitted on the official TG-BPASS portal with all required documents and certifications.",
+    title: "Initial Fee Payment",
+    desc: "The initial processing and drafting fees are collected before file preparation begins, ensuring a smooth and uninterrupted workflow.",
   },
   {
     num: "04",
-    title: "Fee Payment",
-    desc: "Applicable scrutiny fees and government charges are calculated and paid online through the TG-BPASS portal.",
+    title: "BuildNow File Submission",
+    desc: "The complete application is submitted through the BuildNow portal with all required documents, certifications, and architectural drawings.",
   },
   {
     num: "05",
-    title: "GHMC Scrutiny",
-    desc: "GHMC officers scrutinize the building plan for compliance with regulations, setbacks, height restrictions, and parking norms.",
+    title: "Site Inspection",
+    desc: "A GHMC inspector visits the site to verify plot dimensions, boundaries, and alignment with the submitted building plan.",
   },
   {
     num: "06",
-    title: "Site Inspection",
-    desc: "A GHMC inspector visits the site to verify plot dimensions and alignment with the submitted building plan.",
+    title: "File Scrutiny",
+    desc: "GHMC officers scrutinize the building plan for compliance with regulations, setbacks, height restrictions, parking norms, and FAR calculations.",
   },
   {
     num: "07",
-    title: "Approval Certificate Issued",
-    desc: "Upon successful scrutiny and inspection, the Building Permission Order (BPO) is issued digitally via TS-bPASS.",
+    title: "Fee Letter Issued",
+    desc: "After scrutiny, the authorities issue an official fee letter detailing the applicable government charges and mortgage amounts to be paid.",
+  },
+  {
+    num: "08",
+    title: "Mortgage & Fee Payment",
+    desc: "The mortgage amount and all government fees as per the fee letter are paid to the concerned authorities to proceed with final approval.",
+  },
+  {
+    num: "09",
+    title: "Building Approval Issued",
+    desc: "Upon successful completion of all steps, the Building Permission Order (BPO) is officially issued — your project is cleared to begin construction.",
   },
 ];
 
@@ -58,24 +68,14 @@ export default function ProcessSection() {
             className="text-base text-white/55 max-w-xl mx-auto leading-loose"
             style={{ fontFamily: '"DM Sans", sans-serif' }}
           >
-            A transparent, step-by-step process — no hidden surprises. We walk you through every stage of your TG-BPASS building permission approval in Hyderabad.
+            A transparent, step-by-step process — no hidden surprises. We walk you through every stage of your BuildNow building permission approval in Hyderabad.
           </p>
         </div>
 
-        {/* Steps Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-          {steps.slice(0, 3).map((step) => (
-            <StepCard key={step.num} step={step} highlight={false} />
-          ))}
-        </div>
-        <div className="flex justify-center mb-6">
-          <div className="w-full sm:w-1/2 lg:w-1/3">
-            <StepCard step={steps[3]} highlight={true} />
-          </div>
-        </div>
+        {/* Steps Grid — 3 rows × 3 columns */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {steps.slice(4).map((step) => (
-            <StepCard key={step.num} step={step} highlight={false} />
+          {steps.map((step) => (
+            <StepCard key={step.num} step={step} highlight={step.num === "04"} />
           ))}
         </div>
 
