@@ -15,16 +15,18 @@ import ContactSection from "./components/ContactSection";
 import { useJsonLd } from "../../hooks/useJsonLd";
 
 export default function HomePage() {
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://example.com";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://buildingapprovalservices.com";
 
   useEffect(() => {
-    document.title = "Casa Associates Building Approval Experts";
+    document.title = "Best Building Approval Services Hyderabad | GHMC Permission & TG-BPASS | Casa Associates";
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc)
       metaDesc.setAttribute(
         "content",
-        "Casa Associates \u2013 Expert GHMC building permission and TS-bPASS approval services in Hyderabad, Telangana. We offer HMDA layout permission, occupancy certificate, TDR services with transparent process and dedicated support."
+        "Casa Associates \u2013 #1 building approval services in Hyderabad. Expert GHMC building permission, TG-BPASS / BuildNow approvals, HMDA layout permission, occupancy certificate & TDR services. 500+ approvals, 98% success rate."
       );
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) metaKeywords.setAttribute("content", "building approval services Hyderabad, GHMC building permission, TG-BPASS approval, HMDA layout permission, occupancy certificate Hyderabad");
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.setAttribute("href", `${siteUrl}/`);
     window.scrollTo(0, 0);
@@ -38,9 +40,9 @@ export default function HomePage() {
           "@type": "WebSite",
           "@id": `${siteUrl}/#website`,
           url: `${siteUrl}/`,
-          name: "Casa Associates",
+          name: "Building Approval Services Hyderabad | Casa Associates",
           description:
-            "Expert GHMC building permission and TS-bPASS approval services in Hyderabad",
+            "Expert building approval services in Hyderabad — GHMC building permission, TG-BPASS / BuildNow approvals, HMDA layout permission, occupancy certificate & TDR services",
           inLanguage: "en-IN",
           potentialAction: {
             "@type": "SearchAction",
