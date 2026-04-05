@@ -39,7 +39,7 @@ const whyChoose = [
 
 export default function ServicePageLayout({ data }: { data: ServiceData }) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://example.com";
+  const siteUrl = import.meta.env.VITE_SITE_URL || "https://buildingapprovalservices.com";
 
   // Build the service page URL from the badge — MUST be declared before useEffect
   const pageSlug = useMemo(() => {
