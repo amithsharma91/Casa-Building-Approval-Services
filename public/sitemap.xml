@@ -1,80 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://example.com/</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://buildingapprovalservices.com/</loc>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://example.com/about</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://buildingapprovalservices.com/about</loc>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/services</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://buildingapprovalservices.com/services</loc>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://example.com/services/ghmc-building-permission</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://buildingapprovalservices.com/services/ghmc-building-permission</loc>
+    <lastmod>2026-04-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://buildingapprovalservices.com/services/hmda-layout-permission</loc>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/services/hmda-layout-permission</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://buildingapprovalservices.com/services/land-use-master-plan</loc>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/services/land-use-master-plan</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://buildingapprovalservices.com/services/occupancy-certificate</loc>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/services/occupancy-certificate</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://buildingapprovalservices.com/services/tdr-services</loc>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/services/tdr-services</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://buildingapprovalservices.com/services/road-widening-check</loc>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://example.com/services/road-widening-check</loc>
-    <lastmod>2026-03-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://example.com/process</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://buildingapprovalservices.com/process</loc>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://example.com/documents</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://buildingapprovalservices.com/documents</loc>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://example.com/faq</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://buildingapprovalservices.com/faq</loc>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://example.com/contact</loc>
-    <lastmod>2026-03-26</lastmod>
+    <loc>https://buildingapprovalservices.com/contact</loc>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
