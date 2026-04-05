@@ -46,12 +46,7 @@ export default function WhenPermissionSection() {
             >
               When is a Building Permission Required?
             </h2>
-            <div
-              className="text-sm text-gray-600 mb-6 leading-loose p-5 rounded-sm"
-              style={{ background: "rgba(200,150,12,0.08)", border: "1px solid rgba(200,150,12,0.22)", fontFamily: '"DM Sans", sans-serif' }}
-            >
-              <strong style={{ color: "#0B1F3A" }}>What is TG-BPASS?</strong> — The Telangana Government Building Permission Approval &amp; Self Certification System (TG-BPASS) is a unified online portal for obtaining building permissions across Hyderabad, covering GHMC, HMDA, and all municipal corporations in Telangana. Every construction activity above a specified area mandates prior approval through this system.
-            </div>
+
             <p
               className="text-base text-gray-500 mb-8 leading-loose"
               style={{ fontFamily: '"DM Sans", sans-serif' }}
