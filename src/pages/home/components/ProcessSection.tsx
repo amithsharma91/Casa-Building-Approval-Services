@@ -1,124 +1,137 @@
-import { useEffect } from "react";
-import SiteNavbar from "../../components/feature/SiteNavbar";
-import SiteFooter from "../../components/feature/SiteFooter";
-import FloatingWhatsApp from "../../components/feature/FloatingWhatsApp";
-import Hero from "./components/Hero";
-import WhenPermissionSection from "./components/WhenPermissionSection";
-import ServicesSection from "./components/ServicesSection";
-import ProcessSection from "./components/ProcessSection";
-import DocumentsSection from "./components/DocumentsSection";
-import StatsBar from "./components/StatsBar";
-import WhyChooseSection from "./components/WhyChooseSection";
-import TestimonialsSection from "./components/TestimonialsSection";
-import FAQSection from "./components/FAQSection";
-import ContactSection from "./components/ContactSection";
-import { useJsonLd } from "../../hooks/useJsonLd";
+const steps = [
+  {
+    num: "01",
+    title: "Document Checking",
+    desc: "Our experts review all your property documents — Sale Deed, EC, property tax receipts — to verify legal clarity and identify any gaps.",
+  },
+  {
+    num: "02",
+    title: "Building Plan Drafting",
+    desc: "A licensed architect prepares the building plan in compliance with GHMC setback rules, FAR norms, and TG-BPASS guidelines.",
+  },
+  {
+    num: "03",
+    title: "TG-BPASS Submission",
+    desc: "The complete application is submitted on the official TG-BPASS portal with all required documents and certifications.",
+  },
+  {
+    num: "04",
+    title: "Fee Payment",
+    desc: "Applicable scrutiny fees and government charges are calculated and paid online through the TG-BPASS portal.",
+  },
+  {
+    num: "05",
+    title: "GHMC Scrutiny",
+    desc: "GHMC officers scrutinize the building plan for compliance with regulations, setbacks, height restrictions, and parking norms.",
+  },
+  {
+    num: "06",
+    title: "Site Inspection",
+    desc: "A GHMC inspector visits the site to verify plot dimensions and alignment with the submitted building plan.",
+  },
+  {
+    num: "07",
+    title: "Approval Certificate Issued",
+    desc: "Upon successful scrutiny and inspection, the Building Permission Order (BPO) is issued digitally via TS-bPASS.",
+  },
+];
 
-export default function HomePage() {
-  const siteUrl = import.meta.env.VITE_SITE_URL || "https://buildingapprovalservices.com";
+export default function ProcessSection() {
+  return (
+    <section id="process" className="py-24 lg:py-32" style={{ background: "#0B1F3A" }}>
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div
+            className="text-xs font-semibold tracking-widest uppercase mb-5"
+            style={{ color: "#C8960C", fontFamily: '"DM Sans", sans-serif', letterSpacing: "0.15em" }}
+          >
+            Step by Step
+          </div>
+          <h2
+            className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5"
+            style={{ fontFamily: '"Playfair Display", serif' }}
+          >
+            GHMC Approval Process
+          </h2>
+          <p
+            className="text-base text-white/55 max-w-xl mx-auto leading-loose"
+            style={{ fontFamily: '"DM Sans", sans-serif' }}
+          >
+            A transparent, step-by-step process — no hidden surprises. We walk you through every stage of your TG-BPASS building permission approval in Hyderabad.
+          </p>
+        </div>
 
-  useEffect(() => {
-    document.title = "Best Building Approval Services Hyderabad | GHMC Permission & TG-BPASS | Casa Associates";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc)
-      metaDesc.setAttribute(
-        "content",
-        "Casa Associates \u2013 #1 building approval services in Hyderabad. Expert GHMC building permission, TG-BPASS / BuildNow approvals, HMDA layout permission, occupancy certificate & TDR services. 500+ approvals, 98% success rate."
-      );
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) metaKeywords.setAttribute("content", "building approval services Hyderabad, GHMC building permission, TG-BPASS approval, HMDA layout permission, occupancy certificate Hyderabad");
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (canonical) canonical.setAttribute("href", `${siteUrl}/`);
-    window.scrollTo(0, 0);
-  }, [siteUrl]);
+        {/* Steps Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+          {steps.slice(0, 3).map((step) => (
+            <StepCard key={step.num} step={step} highlight={false} />
+          ))}
+        </div>
+        <div className="flex justify-center mb-6">
+          <div className="w-full sm:w-1/2 lg:w-1/3">
+            <StepCard step={steps[3]} highlight={true} />
+          </div>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {steps.slice(4).map((step) => (
+            <StepCard key={step.num} step={step} highlight={false} />
+          ))}
+        </div>
 
-  useJsonLd(
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "@id": `${siteUrl}/#website`,
-          url: `${siteUrl}/`,
-          name: "Building Approval Services Hyderabad | Casa Associates",
-          description:
-            "Expert building approval services in Hyderabad — GHMC building permission, TG-BPASS / BuildNow approvals, HMDA layout permission, occupancy certificate & TDR services",
-          inLanguage: "en-IN",
-          potentialAction: {
-            "@type": "SearchAction",
-            target: {
-              "@type": "EntryPoint",
-              urlTemplate: `${siteUrl}/?s={search_term_string}`,
-            },
-            "query-input": "required name=search_term_string",
-          },
-        },
-        {
-          "@type": "LocalBusiness",
-          "@id": `${siteUrl}/#localbusiness`,
-          name: "Casa Associates",
-          description:
-            "Expert GHMC building permission, TS-bPASS approval, and HMDA layout permission consultancy in Hyderabad",
-          telephone: "+91-99803-77877",
-          email: "ghmcbpservices@gmail.com",
-          url: `${siteUrl}/`,
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Hyderabad",
-            addressRegion: "Telangana",
-            addressCountry: "IN",
-          },
-          geo: {
-            "@type": "GeoCoordinates",
-            latitude: "17.4123487",
-            longitude: "78.2432304",
-          },
-          openingHoursSpecification: [
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday",
-              ],
-              opens: "09:00",
-              closes: "19:00",
-            },
-          ],
-          sameAs: [],
-          priceRange: "$$",
-          areaServed: {
-            "@type": "City",
-            name: "Hyderabad",
-            "@id": "https://www.wikidata.org/wiki/Q1361",
-          },
-        },
-      ],
-    },
-    "home-jsonld"
+        {/* Timeline note */}
+        <div className="mt-12 text-center">
+          <p
+            className="text-sm text-white/45"
+            style={{ fontFamily: '"DM Sans", sans-serif' }}
+          >
+            Approval timeline varies from 30–90 days depending on the category and site inspection schedule.
+          </p>
+        </div>
+      </div>
+    </section>
   );
+}
 
+interface StepProps {
+  step: { num: string; title: string; desc: string };
+  highlight?: boolean;
+}
+
+function StepCard({ step, highlight }: StepProps) {
   return (
     <div
-      className="min-h-screen"
-      style={{ fontFamily: '"DM Sans", sans-serif' }}
+      className="relative p-7 rounded-sm group hover:scale-[1.02] transition-transform duration-300"
+      style={{
+        background: highlight ? "rgba(200,150,12,0.12)" : "rgba(255,255,255,0.05)",
+        border: highlight ? "1px solid rgba(200,150,12,0.45)" : "1px solid rgba(255,255,255,0.09)",
+      }}
     >
-      <SiteNavbar />
-      <Hero />
-      <WhenPermissionSection />
-      <ServicesSection />
-      <ProcessSection />
-      <DocumentsSection />
-      <StatsBar />
-      <WhyChooseSection />
-      <TestimonialsSection />
-      <FAQSection />
-      <ContactSection />
-      <SiteFooter />
-      <FloatingWhatsApp />
+      {/* Step number badge */}
+      <div className="flex items-center gap-3 mb-5">
+        <div
+          className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0"
+          style={{
+            background: highlight ? "#C8960C" : "rgba(200,150,12,0.18)",
+            color: highlight ? "#0B1F3A" : "#C8960C",
+            fontFamily: '"Playfair Display", serif',
+          }}
+        >
+          {step.num}
+        </div>
+      </div>
+      <h3
+        className="text-base font-bold text-white mb-3"
+        style={{ fontFamily: '"Playfair Display", serif' }}
+      >
+        {step.title}
+      </h3>
+      <p
+        className="text-sm text-white/55 leading-loose"
+        style={{ fontFamily: '"DM Sans", sans-serif' }}
+      >
+        {step.desc}
+      </p>
     </div>
   );
 }
