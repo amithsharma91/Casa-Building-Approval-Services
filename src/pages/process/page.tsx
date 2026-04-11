@@ -7,44 +7,56 @@ import { useJsonLd } from "../../hooks/useJsonLd";
 const steps = [
   {
     num: "01",
-    title: "Document Checking",
-    desc: "We review all property documents — sale deed, EC, property tax receipts, and plot layout — to ensure everything is in order before proceeding.",
+    title: "Verifying the Documents",
+    desc: "Our experts thoroughly verify all your property documents — Sale Deed, EC, property tax receipts, and title documents — to ensure legal clarity before proceeding.",
     icon: "ri-file-search-line",
   },
   {
     num: "02",
     title: "Building Plan Drafting",
-    desc: "Our expert architects draft a compliant building plan as per GHMC/HMDA norms, road setbacks, floor-area ratio, and local regulations.",
+    desc: "A licensed architect prepares the building plan in full compliance with GHMC setback rules, FAR norms, and applicable building regulations.",
     icon: "ri-draft-line",
   },
   {
     num: "03",
-    title: "TG-BPASS Application Submission",
-    desc: "We file the complete TG-BPASS online application with all required documents, ensuring accuracy to avoid rejections or delays.",
-    icon: "ri-upload-cloud-2-line",
-  },
-  {
-    num: "04",
-    title: "Fee Payment",
-    desc: "We calculate and guide you through the applicable government fees — including scrutiny fees, development charges, and impact fees.",
+    title: "Initial Fee Payment",
+    desc: "The initial processing and drafting fees are collected before file preparation begins, ensuring a smooth and uninterrupted workflow.",
     icon: "ri-bank-card-line",
   },
   {
-    num: "05",
-    title: "GHMC Scrutiny",
-    desc: "The GHMC/HMDA department reviews the submitted plans. We follow up and respond to any queries or additional document requests promptly.",
-    icon: "ri-search-eye-line",
+    num: "04",
+    title: "BuildNow File Submission",
+    desc: "The complete application is submitted through the BuildNow portal with all required documents, certifications, and architectural drawings.",
+    icon: "ri-upload-cloud-2-line",
   },
   {
-    num: "06",
+    num: "05",
     title: "Site Inspection",
-    desc: "A GHMC officer visits the site to verify the property measurements and conditions. We coordinate and assist during the inspection.",
+    desc: "A GHMC inspector visits the site to verify plot dimensions, boundaries, and alignment with the submitted building plan.",
     icon: "ri-map-pin-user-line",
   },
   {
+    num: "06",
+    title: "File Scrutiny",
+    desc: "GHMC officers scrutinize the building plan for compliance with regulations, setbacks, height restrictions, parking norms, and FAR calculations.",
+    icon: "ri-search-eye-line",
+  },
+  {
     num: "07",
-    title: "Approval Certificate Issued",
-    desc: "Upon successful verification, the building permission certificate is issued. We hand deliver the approved documents to you.",
+    title: "Fee Letter Issued",
+    desc: "After scrutiny, the authorities issue an official fee letter detailing the applicable government charges and mortgage amounts to be paid.",
+    icon: "ri-mail-send-line",
+  },
+  {
+    num: "08",
+    title: "Mortgage & Fee Payment",
+    desc: "The mortgage amount and all government fees as per the fee letter are paid to the concerned authorities to proceed with final approval.",
+    icon: "ri-secure-payment-line",
+  },
+  {
+    num: "09",
+    title: "Building Approval Issued",
+    desc: "Upon successful completion of all steps, the Building Permission Order (BPO) is officially issued — your project is cleared to begin construction.",
     icon: "ri-award-line",
   },
 ];
@@ -74,9 +86,9 @@ export default function ProcessPage() {
           "@type": "WebPage",
           "@id": `${siteUrl}/process#webpage`,
           url: `${siteUrl}/process`,
-          name: "GHMC Building Permission Process Hyderabad | TG-BPASS Steps | Casa Associates",
+          name: "GHMC Building Permission Process Hyderabad | BuildNow Steps | Casa Associates",
           description:
-            "Complete 7-step GHMC building permission and TG-BPASS / BuildNow approval process in Hyderabad managed by Casa Associates.",
+            "Complete 9-step GHMC building permission and BuildNow approval process in Hyderabad managed by Casa Associates.",
           inLanguage: "en-IN",
           breadcrumb: {
             "@type": "BreadcrumbList",
@@ -91,51 +103,63 @@ export default function ProcessPage() {
           "@id": `${siteUrl}/process#howto`,
           name: "GHMC Building Permission Approval Process in Hyderabad",
           description:
-            "Complete step-by-step guide for obtaining GHMC building permission and TG-BPASS / BuildNow approval in Hyderabad, Telangana.",
+            "Complete step-by-step guide for obtaining GHMC building permission and BuildNow approval in Hyderabad, Telangana.",
           totalTime: "P90D",
           estimatedCost: { "@type": "MonetaryAmount", currency: "INR" },
           step: [
             {
               "@type": "HowToStep",
               position: 1,
-              name: "Document Checking",
-              text: "Review all property documents — sale deed, EC, property tax receipts, and plot layout — to ensure everything is in order before proceeding.",
+              name: "Verifying the Documents",
+              text: "Our experts thoroughly verify all your property documents — Sale Deed, EC, property tax receipts, and title documents — to ensure legal clarity before proceeding.",
             },
             {
               "@type": "HowToStep",
               position: 2,
               name: "Building Plan Drafting",
-              text: "Expert architects draft a compliant building plan as per GHMC/HMDA norms, road setbacks, floor-area ratio, and local regulations.",
+              text: "A licensed architect prepares the building plan in full compliance with GHMC setback rules, FAR norms, and applicable building regulations.",
             },
             {
               "@type": "HowToStep",
               position: 3,
-              name: "TG-BPASS Application Submission",
-              text: "File the complete TG-BPASS online application with all required documents, ensuring accuracy to avoid rejections or delays.",
+              name: "Initial Fee Payment",
+              text: "The initial processing and drafting fees are collected before file preparation begins, ensuring a smooth and uninterrupted workflow.",
             },
             {
               "@type": "HowToStep",
               position: 4,
-              name: "Fee Payment",
-              text: "Calculate and guide through the applicable government fees — scrutiny fees, development charges, and impact fees.",
+              name: "BuildNow File Submission",
+              text: "The complete application is submitted through the BuildNow portal with all required documents, certifications, and architectural drawings.",
             },
             {
               "@type": "HowToStep",
               position: 5,
-              name: "GHMC Scrutiny",
-              text: "The GHMC/HMDA department reviews submitted plans. Follow up and respond to any queries or additional document requests.",
+              name: "Site Inspection",
+              text: "A GHMC inspector visits the site to verify plot dimensions, boundaries, and alignment with the submitted building plan.",
             },
             {
               "@type": "HowToStep",
               position: 6,
-              name: "Site Inspection",
-              text: "A GHMC officer visits the site to verify property measurements and conditions. Coordinate and assist during inspection.",
+              name: "File Scrutiny",
+              text: "GHMC officers scrutinize the building plan for compliance with regulations, setbacks, height restrictions, parking norms, and FAR calculations.",
             },
             {
               "@type": "HowToStep",
               position: 7,
-              name: "Approval Certificate Issued",
-              text: "Upon successful verification, the building permission certificate is issued and delivered.",
+              name: "Fee Letter Issued",
+              text: "After scrutiny, the authorities issue an official fee letter detailing the applicable government charges and mortgage amounts to be paid.",
+            },
+            {
+              "@type": "HowToStep",
+              position: 8,
+              name: "Mortgage & Fee Payment",
+              text: "The mortgage amount and all government fees as per the fee letter are paid to the concerned authorities to proceed with final approval.",
+            },
+            {
+              "@type": "HowToStep",
+              position: 9,
+              name: "Building Approval Issued",
+              text: "Upon successful completion of all steps, the Building Permission Order (BPO) is officially issued — your project is cleared to begin construction.",
             },
           ],
         },
@@ -154,13 +178,13 @@ export default function ProcessPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
           <div className="inline-flex items-center gap-3 mb-8 px-5 py-2.5 rounded-sm" style={{ background: "rgba(200,150,12,0.15)", border: "1px solid rgba(200,150,12,0.4)" }}>
             <span className="w-4 h-4 flex items-center justify-center"><i className="ri-route-line text-sm" style={{ color: "#C8960C" }}></i></span>
-            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#C8960C", letterSpacing: "0.12em" }}>7 Simple Steps</span>
+            <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#C8960C", letterSpacing: "0.12em" }}>9 Simple Steps</span>
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: '"Playfair Display", serif' }}>
             GHMC Building <span style={{ color: "#C8960C" }}>Approval Process</span>
           </h1>
           <p className="text-lg text-white/70 max-w-2xl mx-auto mb-10 leading-loose">
-            Step-by-step guidance for TG-BPASS and HMDA approvals in Hyderabad. Casa Associates handles the entire process from start to finish.
+            Step-by-step guidance for BuildNow and HMDA approvals in Hyderabad. Casa Associates handles the entire process from start to finish.
           </p>
           <a
             href="https://wa.me/919000975046"
@@ -182,7 +206,7 @@ export default function ProcessPage() {
               Complete GHMC Approval Workflow
             </h2>
             <p className="text-base text-gray-500 max-w-xl mx-auto">
-              Casa Associates handles the entire GHMC building permission process — start to finish — for a smooth and fast TG-BPASS / BuildNow approval in Hyderabad.
+              Casa Associates handles the entire GHMC building permission process — start to finish — for a smooth and fast BuildNow approval in Hyderabad.
             </p>
           </div>
 
