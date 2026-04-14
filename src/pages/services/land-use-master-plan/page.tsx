@@ -2,7 +2,7 @@ import ServicePageLayout, { ServiceData } from "../../../components/feature/Serv
 
 const data: ServiceData = {
   metaTitle: "Land Use & Master Plan Verification Hyderabad | Casa Associates",
-  metaDesc: "Land use verification and master plan check services in Hyderabad. Verify zoning, DP zones, and permitted land use before buying or building. Call +91 99803 77877.",
+  metaDesc: "Land use verification and master plan check services in Hyderabad. Verify zoning, DP zones, and permitted land use before buying or building. Call +91 90087 10698.",
   badge: "Land Use Verification · Hyderabad",
   heroImage: "https://readdy.ai/api/search-image?query=professional%20architects%20urban%20planners%20reviewing%20Hyderabad%20city%20master%20plan%20zoning%20map%20documents%20corporate%20office%20clean%20minimal%20background%20detailed%20blueprint%20urban%20planning%20Telangana%20geographic%20information%20system%20modern%20desk%20professional%20team%20consultation%20warm%20neutral%20tones&width=1440&height=600&seq=landuse-hero-casa-003&orientation=landscape",
   heroImageAlt: "Land use and master plan verification Hyderabad - Casa Associates",
