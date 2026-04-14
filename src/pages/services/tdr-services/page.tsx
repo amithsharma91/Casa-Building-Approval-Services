@@ -2,7 +2,7 @@ import ServicePageLayout, { ServiceData } from "../../../components/feature/Serv
 
 const data: ServiceData = {
   metaTitle: "TDR Transfer of Development Rights Services Hyderabad | Casa Associates",
-  metaDesc: "Expert TDR services in Hyderabad. Claim your Transfer of Development Rights for road widening, additional floors and compensation. Call +91 99803 77877.",
+  metaDesc: "Expert TDR services in Hyderabad. Claim your Transfer of Development Rights for road widening, additional floors and compensation. Call +91 90087 10698.",
   badge: "TDR Services · Hyderabad",
   heroImage: "https://readdy.ai/api/search-image?query=Hyderabad%20urban%20development%20rights%20transfer%20concept%20modern%20high%20rise%20building%20construction%20additional%20floors%20architecture%20professional%20corporate%20background%20neutral%20tones%20clean%20modern%20style%20Telangana%20real%20estate%20development%20rights%20compensation%20aerial%20view%20city%20skyline&width=1440&height=600&seq=tdr-hero-casa-005&orientation=landscape",
   heroImageAlt: "TDR Transfer of Development Rights services Hyderabad - Casa Associates",
