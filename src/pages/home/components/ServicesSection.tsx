@@ -219,7 +219,7 @@ export default function ServicesSection() {
             </p>
           </div>
           <a
-            href="https://wa.me/919000975046?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
+            href="https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
             target="_blank"
             rel="nofollow noreferrer"
             className="flex items-center gap-2 px-7 py-4 rounded-sm text-sm font-semibold whitespace-nowrap cursor-pointer transition-all hover:bg-green-400 flex-shrink-0"
