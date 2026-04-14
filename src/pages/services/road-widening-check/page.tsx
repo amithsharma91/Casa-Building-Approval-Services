@@ -2,7 +2,7 @@ import ServicePageLayout, { ServiceData } from "../../../components/feature/Serv
 
 const data: ServiceData = {
   metaTitle: "Road Widening Check & Master Plan Verification Hyderabad | Casa Associates",
-  metaDesc: "Road widening and master plan check services in Hyderabad. Verify if your plot is affected before buying or building. Expert consultation. Call +91 99803 77877.",
+  metaDesc: "Road widening and master plan check services in Hyderabad. Verify if your plot is affected before buying or building. Expert consultation. Call +91 90087 10698.",
   badge: "Road Widening Verification · Hyderabad",
   heroImage: "https://readdy.ai/api/search-image?query=aerial%20view%20Hyderabad%20road%20development%20infrastructure%20urban%20road%20widening%20construction%20highway%20expansion%20professional%20aerial%20photography%20wide%20angle%20architecture%20Telangana%20urban%20planning%20master%20plan%20road%20alignment%20corporate%20minimal%20style%20warm%20neutral%20tones%20clean%20background&width=1440&height=600&seq=road-hero-casa-006&orientation=landscape",
   heroImageAlt: "Road widening check and master plan verification Hyderabad - Casa Associates",
