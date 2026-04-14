@@ -46,7 +46,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-4 flex-shrink-0">
               <a
-                href="tel:+919000975046"
+                href="tel:+919008710698"
                 className="flex items-center gap-2 px-6 py-3.5 rounded-sm border text-white text-sm font-semibold whitespace-nowrap cursor-pointer hover:bg-white/10 transition-all"
                 style={{ borderColor: "rgba(200,150,12,0.4)", fontFamily: '"DM Sans", sans-serif' }}
               >
@@ -56,7 +56,7 @@ export default function Footer() {
                 Call Now
               </a>
               <a
-                href="https://wa.me/919000975046?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
+                href="https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
                 target="_blank"
                 rel="nofollow noreferrer"
                 className="flex items-center gap-2 px-6 py-3.5 rounded-sm bg-green-500 hover:bg-green-400 text-white text-sm font-semibold whitespace-nowrap cursor-pointer transition-all"
@@ -93,14 +93,14 @@ export default function Footer() {
             </p>
             <div className="flex flex-col gap-3">
               <a
-                href="tel:+919000975046"
+                href="tel:+919008710698"
                 className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors cursor-pointer"
                 style={{ fontFamily: '"DM Sans", sans-serif' }}
               >
                 <span className="w-4 h-4 flex items-center justify-center">
                   <i className="ri-phone-line text-xs" style={{ color: "#C8960C" }}></i>
                 </span>
-                +91 90009 75046
+                +91 90087 10698
               </a>
               <a
                 href="mailto:Casa.Approvals@gmail.com"
@@ -210,7 +210,7 @@ export default function Footer() {
               </div>
             </div>
             <a
-              href="https://wa.me/919000975046?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
+              href="https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
               target="_blank"
               rel="nofollow noreferrer"
               className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-sm bg-green-600 hover:bg-green-500 text-white text-sm font-semibold whitespace-nowrap cursor-pointer transition-all"
