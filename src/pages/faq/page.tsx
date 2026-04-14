@@ -223,7 +223,7 @@ export default function FAQPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/919000975046"
+              href="https://wa.me/919008710698"
               target="_blank"
               rel="nofollow noreferrer"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-400 text-white font-semibold text-base rounded-sm transition-all cursor-pointer whitespace-nowrap"
@@ -232,12 +232,12 @@ export default function FAQPage() {
               Contact Us on WhatsApp
             </a>
             <a
-              href="tel:+919000975046"
+              href="tel:+919008710698"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 font-semibold text-base rounded-sm transition-all cursor-pointer whitespace-nowrap hover:bg-white/10"
               style={{ border: "1px solid rgba(200,150,12,0.5)", color: "#C8960C" }}
             >
               <span className="w-5 h-5 flex items-center justify-center"><i className="ri-phone-line text-lg"></i></span>
-              Call +91 90009 75046
+              Call +91 90087 10698
             </a>
           </div>
         </div>
