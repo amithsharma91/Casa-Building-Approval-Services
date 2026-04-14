@@ -4,7 +4,7 @@ import SiteFooter from "../../components/feature/SiteFooter";
 import FloatingWhatsApp from "../../components/feature/FloatingWhatsApp";
 import { useJsonLd } from "../../hooks/useJsonLd";
 
-const WA_LINK = "https://wa.me/919000975046?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20";
+const WA_LINK = "https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20";
 
 export default function ContactPage() {
   const siteUrl = import.meta.env.VITE_SITE_URL || "https://buildingapprovalservices.com";
@@ -16,7 +16,7 @@ export default function ContactPage() {
     if (metaDesc)
       metaDesc.setAttribute(
         "content",
-        "Contact Casa Associates for building approval services in Hyderabad — GHMC building permission, TG-BPASS / BuildNow approvals & HMDA layout permission. Call +91 90009 75046 or WhatsApp for free consultation."
+        "Contact Casa Associates for building approval services in Hyderabad — GHMC building permission, TG-BPASS / BuildNow approvals & HMDA layout permission. Call +91 90087 10698 or WhatsApp for free consultation."
       );
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.setAttribute("href", `${siteUrl}/contact`);
@@ -47,7 +47,7 @@ export default function ContactPage() {
           "@type": "LocalBusiness",
           "@id": `${siteUrl}/#localbusiness`,
           name: "Casa Associates",
-          telephone: "+91-9000975046",
+          telephone: "+91-9008710698",
           email: "Casa.Approvals@gmail.com",
           url: `${siteUrl}/`,
           address: {
@@ -73,7 +73,7 @@ export default function ContactPage() {
           ],
           contactPoint: {
             "@type": "ContactPoint",
-            telephone: "+91-9000975046",
+            telephone: "+91-9008710698",
             contactType: "customer service",
             availableLanguage: ["English", "Telugu", "Hindi"],
             contactOption: "TollFree",
@@ -203,7 +203,7 @@ export default function ContactPage() {
                   <div className="flex-1 text-sm text-gray-600 leading-relaxed">
                     <strong style={{ color: "#0B1F3A" }}>Also reachable by phone or email</strong>
                     <br />
-                    <a href="tel:+919000975046" className="text-sm font-semibold hover:underline cursor-pointer" style={{ color: "#9e7509" }}>+91 90009 75046</a>
+                    <a href="tel:+919008710698" className="text-sm font-semibold hover:underline cursor-pointer" style={{ color: "#9e7509" }}>+91 90087 10698</a>
                     &nbsp;&nbsp;·&nbsp;&nbsp;
                     <a href="mailto:Casa.Approvals@gmail.com" className="text-sm font-semibold hover:underline cursor-pointer" style={{ color: "#9e7509" }}>Casa.Approvals@gmail.com</a>
                   </div>
@@ -217,7 +217,7 @@ export default function ContactPage() {
                 <h2 className="text-2xl font-bold mb-6" style={{ fontFamily: '"Playfair Display", serif', color: "#0B1F3A" }}>Contact Details</h2>
               </div>
               {[
-                { icon: "ri-phone-line", label: "Phone / Call", value: "+91 90009 75046", href: "tel:+919000975046" },
+                { icon: "ri-phone-line", label: "Phone / Call", value: "+91 90087 10698", href: "tel:+919008710698" },
                 { icon: "ri-mail-line", label: "Email", value: "Casa.Approvals@gmail.com", href: "mailto:Casa.Approvals@gmail.com" },
                 { icon: "ri-map-pin-line", label: "Location", value: "Road No. 01, Avenue 07, 4th Floor, Bhooma Plaza, Street 04, near GVK One Mall, Banjara Hills, Hyderabad, Telangana 500034", href: null },
                 { icon: "ri-time-line", label: "Working Hours", value: "Mon–Sat: 9 AM – 7 PM", href: null },
