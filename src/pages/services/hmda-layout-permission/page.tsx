@@ -2,7 +2,7 @@ import ServicePageLayout, { ServiceData } from "../../../components/feature/Serv
 
 const data: ServiceData = {
   metaTitle: "HMDA Layout Permission Services Hyderabad | Casa Associates",
-  metaDesc: "Professional HMDA layout permission services in Hyderabad. Residential and commercial layout approvals handled by experts. Call +91 99803 77877.",
+  metaDesc: "Professional HMDA layout permission services in Hyderabad. Residential and commercial layout approvals handled by experts. Call +91 90087 10698.",
   badge: "HMDA Layout Approvals · Hyderabad",
   heroImage: "https://readdy.ai/api/search-image?query=Hyderabad%20suburban%20residential%20layout%20aerial%20view%20plot%20development%20HMDA%20approved%20township%20planning%20clean%20modern%20architecture%20professional%20photography%20wide%20angle%20Telangana%20metropolitan%20real%20estate%20development%20golden%20hour%20corporate%20style%20open%20plots%20residential%20colony&width=1440&height=600&seq=hmda-hero-casa-002&orientation=landscape",
   heroImageAlt: "HMDA layout permission services Hyderabad - Casa Associates",
