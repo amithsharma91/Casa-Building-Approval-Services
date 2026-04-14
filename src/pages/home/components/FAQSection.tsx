@@ -143,11 +143,11 @@ export default function FAQSection() {
           >
             Still have questions? Reach us at{" "}
             <a
-              href="tel:+919000975046"
+              href="tel:+919008710698"
               className="font-semibold hover:underline cursor-pointer"
               style={{ color: "#C8960C" }}
             >
-              +91 90009 75046
+              +91 90087 10698
             </a>
           </p>
         </div>
