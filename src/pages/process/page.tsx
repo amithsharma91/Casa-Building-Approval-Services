@@ -187,7 +187,7 @@ export default function ProcessPage() {
             Step-by-step guidance for BuildNow and HMDA approvals in Hyderabad. Casa Associates handles the entire process from start to finish.
           </p>
           <a
-            href="https://wa.me/919000975046"
+            href="https://wa.me/919008710698"
             target="_blank"
             rel="nofollow noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-400 text-white font-semibold text-base rounded-sm transition-all cursor-pointer whitespace-nowrap"
@@ -300,7 +300,7 @@ export default function ProcessPage() {
           </h2>
           <p className="text-base text-gray-500 mb-8">Chat with us on WhatsApp and get your GHMC building permission started right away. Fast, transparent, and reliable.</p>
           <a
-            href="https://wa.me/919000975046"
+            href="https://wa.me/919008710698"
             target="_blank"
             rel="nofollow noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-400 text-white font-semibold text-base rounded-sm transition-all cursor-pointer whitespace-nowrap"
