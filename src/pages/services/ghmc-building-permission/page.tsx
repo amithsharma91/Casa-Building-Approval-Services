@@ -2,7 +2,7 @@ import ServicePageLayout, { ServiceData } from "../../../components/feature/Serv
 
 const data: ServiceData = {
   metaTitle: "GHMC Building Permission Services Hyderabad | Casa Associates",
-  metaDesc: "Expert GHMC building permission services in Hyderabad. We handle TG-BPASS applications, plan drafting, and approval tracking. Call +91 90009 75046.",
+  metaDesc: "Expert GHMC building permission services in Hyderabad. We handle TG-BPASS applications, plan drafting, and approval tracking. Call +91 90087 10698.",
   badge: "GHMC Approved Services · Hyderabad",
   heroImage: "https://readdy.ai/api/search-image?query=modern%20Hyderabad%20cityscape%20aerial%20photography%20Greater%20Hyderabad%20Municipal%20Corporation%20urban%20development%20residential%20buildings%20GHMC%20approved%20construction%20professional%20corporate%20style%20navy%20blue%20golden%20hour%20lighting%20clean%20minimalist%20background%20wide%20angle%20architecture%20real%20estate%20Telangana%20skyline&width=1440&height=600&seq=ghmc-hero-casa-001&orientation=landscape",
   heroImageAlt: "GHMC building permission services Hyderabad - Casa Associates",
