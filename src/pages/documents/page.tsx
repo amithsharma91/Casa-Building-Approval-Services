@@ -126,7 +126,7 @@ export default function DocumentsPage() {
             A complete checklist for GHMC building permission and TG-BPASS / BuildNow approval in Hyderabad. Our team guides you if any documents are missing.
           </p>
           <a
-            href="https://wa.me/919000975046"
+            href="https://wa.me/919008710698"
             target="_blank"
             rel="nofollow noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-400 text-white font-semibold text-base rounded-sm transition-all cursor-pointer whitespace-nowrap"
@@ -204,7 +204,7 @@ export default function DocumentsPage() {
               Share your property documents on WhatsApp and our experts will review them and guide you through the GHMC approval process.
             </p>
             <a
-              href="https://wa.me/919000975046"
+              href="https://wa.me/919008710698"
               target="_blank"
               rel="nofollow noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-400 text-white font-semibold text-base rounded-sm transition-all cursor-pointer whitespace-nowrap"
