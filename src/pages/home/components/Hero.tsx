@@ -16,7 +16,7 @@ export default function Hero() {
   const { ref: statsRef, inView: statsInView } = useInView(0.2);
   const { trackConversion } = useGtagConversion();
 
-  const WA_URL = "https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20";
+  const WA_URL = "https://wa.me/919000975046?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20";
 
   return (
     <section
