@@ -1,3 +1,5 @@
+import { useGtagConversion } from '@/hooks/useGtagConversion';
+
 const WA_LINK =
   "https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20";
 
@@ -35,6 +37,8 @@ const steps = [
 ];
 
 export default function ContactSection() {
+  const { trackConversion } = useGtagConversion();
+
   return (
     <section id="contact" className="py-20 lg:py-28" style={{ background: "#F8F6F0" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
@@ -111,6 +115,7 @@ export default function ContactSection() {
                 href={WA_LINK}
                 target="_blank"
                 rel="nofollow noreferrer"
+                onClick={() => trackConversion(WA_LINK)}
                 className="w-full flex items-center justify-center gap-3 py-4 bg-green-500 hover:bg-green-400 rounded-sm text-white font-semibold text-base cursor-pointer transition-all whitespace-nowrap"
                 style={{ fontFamily: '"DM Sans", sans-serif' }}
               >
@@ -140,6 +145,7 @@ export default function ContactSection() {
               </span>
               <a
                 href="tel:+919008710698"
+                onClick={() => trackConversion()}
                 className="text-xs font-semibold hover:underline cursor-pointer"
                 style={{ color: "#9e7509", fontFamily: '"DM Sans", sans-serif' }}
               >
@@ -182,6 +188,7 @@ export default function ContactSection() {
                   {c.href ? (
                     <a
                       href={c.href}
+                      onClick={c.href.startsWith("tel:") ? () => trackConversion() : undefined}
                       className="text-sm font-semibold leading-snug hover:underline cursor-pointer"
                       style={{ color: "#0B1F3A", fontFamily: '"DM Sans", sans-serif' }}
                       {...(c.href.startsWith("http") ? { target: "_blank", rel: "nofollow noreferrer" } : {})}
