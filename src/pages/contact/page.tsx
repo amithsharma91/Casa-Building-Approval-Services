@@ -3,11 +3,13 @@ import SiteNavbar from "../../components/feature/SiteNavbar";
 import SiteFooter from "../../components/feature/SiteFooter";
 import FloatingWhatsApp from "../../components/feature/FloatingWhatsApp";
 import { useJsonLd } from "../../hooks/useJsonLd";
+import { useGtagConversion } from "../../hooks/useGtagConversion";
 
 const WA_LINK = "https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20";
 
 export default function ContactPage() {
   const siteUrl = import.meta.env.VITE_SITE_URL || "https://buildingapprovalservices.com";
+  const { trackConversion } = useGtagConversion();
 
   useEffect(() => {
     document.title =
@@ -122,6 +124,7 @@ export default function ContactPage() {
               href={WA_LINK}
               target="_blank"
               rel="nofollow noreferrer"
+              onClick={() => trackConversion(WA_LINK)}
               className="flex items-center gap-2 px-7 py-3.5 bg-green-500 hover:bg-green-400 text-white font-semibold text-sm rounded-sm transition-all cursor-pointer whitespace-nowrap flex-shrink-0"
             >
               <span className="w-4 h-4 flex items-center justify-center"><i className="ri-whatsapp-line text-sm"></i></span>
@@ -185,6 +188,7 @@ export default function ContactPage() {
                     href={WA_LINK}
                     target="_blank"
                     rel="nofollow noreferrer"
+                    onClick={() => trackConversion(WA_LINK)}
                     className="w-full flex items-center justify-center gap-3 py-5 bg-green-500 hover:bg-green-400 rounded-sm text-white font-bold text-lg cursor-pointer transition-all whitespace-nowrap"
                     style={{ fontFamily: '"DM Sans", sans-serif' }}
                   >
@@ -203,7 +207,14 @@ export default function ContactPage() {
                   <div className="flex-1 text-sm text-gray-600 leading-relaxed">
                     <strong style={{ color: "#0B1F3A" }}>Also reachable by phone or email</strong>
                     <br />
-                    <a href="tel:+919008710698" className="text-sm font-semibold hover:underline cursor-pointer" style={{ color: "#9e7509" }}>+91 90087 10698</a>
+                    <a
+                      href="tel:+919008710698"
+                      onClick={() => trackConversion()}
+                      className="text-sm font-semibold hover:underline cursor-pointer"
+                      style={{ color: "#9e7509" }}
+                    >
+                      +91 90087 10698
+                    </a>
                     &nbsp;&nbsp;·&nbsp;&nbsp;
                     <a href="mailto:Casa.Approvals@gmail.com" className="text-sm font-semibold hover:underline cursor-pointer" style={{ color: "#9e7509" }}>Casa.Approvals@gmail.com</a>
                   </div>
@@ -229,7 +240,14 @@ export default function ContactPage() {
                   <div>
                     <div className="text-xs font-semibold tracking-wider uppercase text-gray-400 mb-1">{item.label}</div>
                     {item.href ? (
-                      <a href={item.href} className="text-sm font-semibold cursor-pointer hover:underline" style={{ color: "#0B1F3A" }}>{item.value}</a>
+                      <a
+                        href={item.href}
+                        onClick={item.href.startsWith("tel:") ? () => trackConversion() : undefined}
+                        className="text-sm font-semibold cursor-pointer hover:underline"
+                        style={{ color: "#0B1F3A" }}
+                      >
+                        {item.value}
+                      </a>
                     ) : (
                       <div className="text-sm font-semibold leading-relaxed" style={{ color: "#0B1F3A" }}>{item.value}</div>
                     )}
@@ -241,6 +259,7 @@ export default function ContactPage() {
                 href={WA_LINK}
                 target="_blank"
                 rel="nofollow noreferrer"
+                onClick={() => trackConversion(WA_LINK)}
                 className="flex items-center justify-center gap-3 py-4 bg-green-500 hover:bg-green-400 text-white font-semibold text-base rounded-sm transition-all cursor-pointer whitespace-nowrap"
               >
                 <span className="w-5 h-5 flex items-center justify-center"><i className="ri-whatsapp-line text-lg"></i></span>
