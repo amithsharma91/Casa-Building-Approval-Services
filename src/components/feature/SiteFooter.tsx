@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useGtagConversion } from "@/hooks/useGtagConversion";
 
 const LOGO_URL = "https://storage.readdy-site.link/project_files/e935d4ba-d68c-4c45-9f24-abafaff5b522/ee8ae188-79fa-4b7d-8352-80456f8ccb79_IMG_20260327_014746-removebg-preview.png?v=908567f38165471e00a7b0e447a7b9af";
 
@@ -21,6 +22,9 @@ const quickLinks = [
 ];
 
 export default function SiteFooter() {
+  const { trackConversion } = useGtagConversion();
+  const WA_URL = "https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20";
+
   return (
     <footer style={{ background: "#060E1C" }}>
       <div style={{ background: "#0B1F3A", borderBottom: "1px solid rgba(200,150,12,0.2)" }}>
@@ -37,6 +41,7 @@ export default function SiteFooter() {
             <div className="flex items-center gap-4 flex-shrink-0">
               <a
                 href="tel:+919008710698"
+                onClick={() => trackConversion()}
                 className="flex items-center gap-2 px-6 py-3.5 rounded-sm border text-white text-sm font-semibold whitespace-nowrap cursor-pointer hover:bg-white/10 transition-all"
                 style={{ borderColor: "rgba(200,150,12,0.4)", fontFamily: '"DM Sans", sans-serif' }}
               >
@@ -46,9 +51,10 @@ export default function SiteFooter() {
                 Call Now
               </a>
               <a
-                href="https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
+                href={WA_URL}
                 target="_blank"
                 rel="nofollow noreferrer"
+                onClick={() => trackConversion(WA_URL)}
                 className="flex items-center gap-2 px-6 py-3.5 rounded-sm bg-green-500 hover:bg-green-400 text-white text-sm font-semibold whitespace-nowrap cursor-pointer transition-all"
                 style={{ fontFamily: '"DM Sans", sans-serif' }}
               >
@@ -77,7 +83,12 @@ export default function SiteFooter() {
               Expert building permission consultancy for GHMC, HMDA, and TG-BPASS / BuildNow approvals in Hyderabad, Telangana.
             </p>
             <div className="flex flex-col gap-3">
-              <a href="tel:+919008710698" className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors cursor-pointer" style={{ fontFamily: '"DM Sans", sans-serif' }}>
+              <a
+                href="tel:+919008710698"
+                onClick={() => trackConversion()}
+                className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors cursor-pointer"
+                style={{ fontFamily: '"DM Sans", sans-serif' }}
+              >
                 <span className="w-4 h-4 flex items-center justify-center"><i className="ri-phone-line text-xs" style={{ color: "#C8960C" }}></i></span>
                 +91 90087 10698
               </a>
@@ -132,9 +143,10 @@ export default function SiteFooter() {
               </div>
             </div>
             <a
-              href="https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
+              href={WA_URL}
               target="_blank"
               rel="nofollow noreferrer"
+              onClick={() => trackConversion(WA_URL)}
               className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-sm bg-green-600 hover:bg-green-500 text-white text-sm font-semibold whitespace-nowrap cursor-pointer transition-all"
               style={{ fontFamily: '"DM Sans", sans-serif' }}
             >
