@@ -2,7 +2,7 @@ import ServicePageLayout, { ServiceData } from "../../../components/feature/Serv
 
 const data: ServiceData = {
   metaTitle: "Occupancy Certificate Services Hyderabad | Casa Associates",
-  metaDesc: "Get your Occupancy Certificate (OC) in Hyderabad with expert help. We handle GHMC and HMDA OC applications end-to-end. Call +91 90087 10698.",
+  metaDesc: "Get your Occupancy Certificate (OC) in Hyderabad with expert help. We handle GHMC and HMDA OC applications end-to-end. Call +91 90009 75046.",
   badge: "Occupancy Certificate Services · Hyderabad",
   heroImage: "https://readdy.ai/api/search-image?query=newly%20completed%20modern%20residential%20building%20construction%20Hyderabad%20India%20certificate%20completion%20clean%20contemporary%20architecture%20professional%20photography%20exterior%20elevation%20warm%20neutral%20background%20clear%20sky%20Telangana%20GHMC%20completed%20building%20approval%20corporate%20minimal%20style&width=1440&height=600&seq=oc-hero-casa-004&orientation=landscape",
   heroImageAlt: "Occupancy Certificate services Hyderabad - Casa Associates",
