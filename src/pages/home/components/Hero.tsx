@@ -1,4 +1,5 @@
 import { useInView, animStyles } from '../../../hooks/useInView';
+import { useGtagConversion } from '@/hooks/useGtagConversion';
 
 const stats = [
   { value: "500+", label: "Approvals Delivered" },
@@ -13,6 +14,9 @@ export default function Hero() {
   };
 
   const { ref: statsRef, inView: statsInView } = useInView(0.2);
+  const { trackConversion } = useGtagConversion();
+
+  const WA_URL = "https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20";
 
   return (
     <section
@@ -87,11 +91,12 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className="hero-animate-4 flex flex-col sm:flex-row gap-4 mb-16">
             <a
-              href="https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
+              href={WA_URL}
               target="_blank"
               rel="nofollow noreferrer"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-400 text-white font-semibold text-base rounded-sm transition-all duration-300 whitespace-nowrap cursor-pointer"
               style={{ fontFamily: '"DM Sans", sans-serif' }}
+              onClick={() => trackConversion(WA_URL)}
             >
               <span className="w-5 h-5 flex items-center justify-center">
                 <i className="ri-whatsapp-line text-lg"></i>
