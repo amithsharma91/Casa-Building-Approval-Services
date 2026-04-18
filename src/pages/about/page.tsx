@@ -72,7 +72,7 @@ export default function AboutPage() {
           "@id": `${siteUrl}/#organization`,
           name: "Casa Associates",
           url: `${siteUrl}/`,
-          telephone: "+91-9008710698",
+          telephone: "+91-9000975046",
           email: "ghmcbpservices@gmail.com",
           foundingDate: "2014",
           numberOfEmployees: { "@type": "QuantitativeValue", value: 10 },
@@ -126,7 +126,7 @@ export default function AboutPage() {
             Building Permission Experts in Hyderabad — trusted by hundreds of clients for GHMC, HMDA, and TG-BPASS / BuildNow approvals.
           </p>
           <a
-            href="https://wa.me/919008710698"
+            href="https://wa.me/919000975046"
             target="_blank"
             rel="nofollow noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-400 text-white font-semibold text-base rounded-sm transition-all duration-300 whitespace-nowrap cursor-pointer"
@@ -266,7 +266,7 @@ export default function AboutPage() {
           <p className="text-base text-gray-500 mb-8">Send your documents on WhatsApp for expert guidance — free consultation for your first query.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/919008710698"
+              href="https://wa.me/919000975046"
               target="_blank"
               rel="nofollow noreferrer"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-400 text-white font-semibold text-base rounded-sm transition-all cursor-pointer whitespace-nowrap"
@@ -275,12 +275,12 @@ export default function AboutPage() {
               Send Documents on WhatsApp
             </a>
             <a
-              href="tel:+919008710698"
+              href="tel:+919000975046"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 font-semibold text-base rounded-sm transition-all cursor-pointer whitespace-nowrap hover:bg-gray-50"
               style={{ border: "1px solid rgba(11,31,58,0.2)", color: "#0B1F3A" }}
             >
               <span className="w-5 h-5 flex items-center justify-center"><i className="ri-phone-line text-lg" style={{ color: "#C8960C" }}></i></span>
-              Call +91 90087 10698
+              Call +91 90009 75046
             </a>
           </div>
           <p className="text-xs text-gray-400 mt-6">We are a private consultancy. Not affiliated with GHMC, HMDA, or any government body.</p>
