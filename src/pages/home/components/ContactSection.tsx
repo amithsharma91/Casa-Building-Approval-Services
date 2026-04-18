@@ -1,14 +1,14 @@
 import { useGtagConversion } from '@/hooks/useGtagConversion';
 
 const WA_LINK =
-  "https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20";
+  "https://wa.me/919000975046?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20";
 
 const contactDetails = [
   {
     icon: "ri-phone-line",
     label: "Call Us",
-    value: "+91 90087 10698",
-    href: "tel:+919008710698",
+    value: "+91 90009 75046",
+    href: "tel:+919000975046",
   },
   {
     icon: "ri-mail-line",
@@ -144,12 +144,12 @@ export default function ContactSection() {
                 Also:
               </span>
               <a
-                href="tel:+919008710698"
+                href="tel:+919000975046"
                 onClick={() => trackConversion()}
                 className="text-xs font-semibold hover:underline cursor-pointer"
                 style={{ color: "#9e7509", fontFamily: '"DM Sans", sans-serif' }}
               >
-                +91 90087 10698
+                +91 90009 75046
               </a>
               <span className="text-gray-400 text-xs">·</span>
               <a
