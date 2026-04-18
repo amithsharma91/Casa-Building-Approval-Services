@@ -207,7 +207,7 @@ export default function ServicesPage() {
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
+              href="https://wa.me/919000975046?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
               target="_blank"
               rel="nofollow noreferrer"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-400 text-white font-semibold text-base rounded-sm transition-all duration-300 whitespace-nowrap cursor-pointer"
@@ -218,7 +218,7 @@ export default function ServicesPage() {
               Get Free Consultation on WhatsApp
             </a>
             <a
-              href="tel:+919008710698"
+              href="tel:+919000975046"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 font-semibold text-base rounded-sm transition-all duration-300 whitespace-nowrap cursor-pointer hover:bg-white/10"
               style={{ border: "1px solid rgba(200,150,12,0.5)", color: "#fff" }}
             >
@@ -398,7 +398,7 @@ export default function ServicesPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
+              href="https://wa.me/919000975046?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
               target="_blank"
               rel="nofollow noreferrer"
               className="inline-flex items-center justify-center gap-3 px-9 py-4 bg-green-500 hover:bg-green-400 text-white font-semibold text-base rounded-sm transition-all duration-300 whitespace-nowrap cursor-pointer"
@@ -409,14 +409,14 @@ export default function ServicesPage() {
               Get Free Consultation on WhatsApp
             </a>
             <a
-              href="tel:+919008710698"
+              href="tel:+919000975046"
               className="inline-flex items-center justify-center gap-3 px-9 py-4 font-semibold text-base rounded-sm transition-all duration-300 whitespace-nowrap cursor-pointer hover:bg-gray-50"
               style={{ border: "1px solid rgba(11,31,58,0.2)", color: "#0B1F3A" }}
             >
               <span className="w-5 h-5 flex items-center justify-center">
                 <i className="ri-phone-line text-lg" style={{ color: "#C8960C" }}></i>
               </span>
-              Call +91 90087 10698
+              Call +91 90009 75046
             </a>
           </div>
           <p className="text-xs text-gray-400 mt-8 leading-relaxed">
