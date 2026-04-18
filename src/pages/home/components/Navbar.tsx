@@ -26,7 +26,7 @@ export default function Navbar() {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
-  const WA_URL = "https://wa.me/919008710698";
+  const WA_URL = "https://wa.me/919000975046";
 
   return (
     <header
@@ -74,7 +74,7 @@ export default function Navbar() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:+919008710698"
+              href="tel:+919000975046"
               onClick={() => trackConversion()}
               className="flex items-center gap-2 px-4 py-2 rounded-sm border text-white text-sm font-medium transition-all whitespace-nowrap cursor-pointer hover:bg-white/10"
               style={{ borderColor: "rgba(200,150,12,0.5)", fontFamily: '"DM Sans", sans-serif' }}
@@ -82,7 +82,7 @@ export default function Navbar() {
               <span className="w-4 h-4 flex items-center justify-center">
                 <i className="ri-phone-line text-sm" style={{ color: "#C8960C" }}></i>
               </span>
-              +91 90087 10698
+              +91 90009 75046
             </a>
             <a
               href={WA_URL}
@@ -129,13 +129,13 @@ export default function Navbar() {
             ))}
             <div className="flex flex-col gap-2 mt-4 pt-4" style={{ borderTop: "1px solid rgba(200,150,12,0.3)" }}>
               <a
-                href="tel:+919008710698"
+                href="tel:+919000975046"
                 onClick={() => trackConversion()}
                 className="flex items-center justify-center gap-2 py-3 rounded-sm border text-white font-medium text-sm cursor-pointer whitespace-nowrap"
                 style={{ borderColor: "rgba(200,150,12,0.5)" }}
               >
                 <i className="ri-phone-line" style={{ color: "#C8960C" }}></i>
-                +91 90087 10698
+                +91 90009 75046
               </a>
               <a
                 href={WA_URL}
