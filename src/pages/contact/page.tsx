@@ -1,15 +1,94 @@
-import { useEffect } from "react";
+import { useEffect, useState, FormEvent } from "react";
 import SiteNavbar from "../../components/feature/SiteNavbar";
 import SiteFooter from "../../components/feature/SiteFooter";
 import FloatingWhatsApp from "../../components/feature/FloatingWhatsApp";
 import { useJsonLd } from "../../hooks/useJsonLd";
 import { useGtagConversion } from "../../hooks/useGtagConversion";
 
-const WA_LINK = "https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20";
+const WA_NUMBER = "919000975046";
+const WA_LINK = `https://wa.me/${WA_NUMBER}`;
+
+const SERVICE_OPTIONS = [
+  "Residential Architecture",
+  "Interior Design",
+  "Renovation",
+  "Convention Hall",
+  "Commercial",
+  "Consultation Only",
+];
+
+const BUDGET_OPTIONS = [
+  "Below 25 Lakhs",
+  "25 Lakhs to 50 Lakhs",
+  "50 Lakhs to 1 Crore",
+  "1 Crore to 3 Crores",
+  "3 Crores to 5 Crores",
+  "Above 5 Crores",
+  "Prefer to Discuss",
+];
 
 export default function ContactPage() {
   const siteUrl = import.meta.env.VITE_SITE_URL || "https://buildingapprovalservices.com";
   const { trackConversion } = useGtagConversion();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    email: "",
+    service: "",
+    location: "",
+    budget: "",
+    brief: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleWhatsAppEnquiry = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (submitting) return;
+
+    const { name, phone, email, service, location, budget, brief } = formData;
+
+    // Build WhatsApp message
+    const message = `Hello Casa Associates!\n\nI am interested in building approval services.\n\nHere are my details:\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nLocation: ${location}\nBudget: ${budget}\n\nProject Brief:\n${brief}\n\nI found you through your website.`;
+
+    const encodedMessage = encodeURIComponent(message);
+    const waUrl = `${WA_LINK}?text=${encodedMessage}`;
+
+    // Fire Google Ads conversion
+    trackConversion(WA_LINK);
+
+    // Also submit to form backend (background)
+    setSubmitting(true);
+    try {
+      const body = new URLSearchParams({
+        name,
+        phone,
+        email,
+        service,
+        location,
+        budget,
+        brief,
+      });
+      await fetch("https://readdy.ai/api/form/d7hnetmhdlg6dog9d300", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
+    } catch {
+      // silent — WA still opens
+    }
+
+    setSubmitted(true);
+    setSubmitting(false);
+
+    // Open WhatsApp in new tab
+    window.open(waUrl, "_blank", "noopener,noreferrer");
+  };
 
   useEffect(() => {
     document.title =
@@ -18,7 +97,7 @@ export default function ContactPage() {
     if (metaDesc)
       metaDesc.setAttribute(
         "content",
-        "Contact Casa Associates for building approval services in Hyderabad — GHMC building permission, TG-BPASS / BuildNow approvals & HMDA layout permission. Call +91 90087 10698 or WhatsApp for free consultation."
+        "Contact Casa Associates for building approval services in Hyderabad — GHMC building permission, TG-BPASS / BuildNow approvals & HMDA layout permission. Call +91 90009 75046 or WhatsApp for free consultation."
       );
     const canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (canonical) canonical.setAttribute("href", `${siteUrl}/contact`);
@@ -49,7 +128,7 @@ export default function ContactPage() {
           "@type": "LocalBusiness",
           "@id": `${siteUrl}/#localbusiness`,
           name: "Casa Associates",
-          telephone: "+91-9008710698",
+          telephone: "+91-9000975046",
           email: "Casa.Approvals@gmail.com",
           url: `${siteUrl}/`,
           address: {
@@ -75,7 +154,7 @@ export default function ContactPage() {
           ],
           contactPoint: {
             "@type": "ContactPoint",
-            telephone: "+91-9008710698",
+            telephone: "+91-9000975046",
             contactType: "customer service",
             availableLanguage: ["English", "Telugu", "Hindi"],
             contactOption: "TollFree",
@@ -128,7 +207,7 @@ export default function ContactPage() {
               className="flex items-center gap-2 px-7 py-3.5 bg-green-500 hover:bg-green-400 text-white font-semibold text-sm rounded-sm transition-all cursor-pointer whitespace-nowrap flex-shrink-0"
             >
               <span className="w-4 h-4 flex items-center justify-center"><i className="ri-whatsapp-line text-sm"></i></span>
-              Chat on WhatsApp
+              Use Enquiry Form Below
             </a>
           </div>
         </div>
@@ -138,87 +217,240 @@ export default function ContactPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid lg:grid-cols-5 gap-14">
-            {/* WhatsApp CTA Panel (replaces form) */}
+            {/* WhatsApp Enquiry Form */}
             <div className="lg:col-span-3">
               <div className="mb-8">
                 <h2 className="text-3xl font-bold mb-3" style={{ fontFamily: '"Playfair Display", serif', color: "#0B1F3A" }}>
-                  Contact Us on WhatsApp
+                  WhatsApp Enquiry Form
                 </h2>
-                <p className="text-base text-gray-500">Fill your details in WhatsApp and our team will assist you quickly.</p>
+                <p className="text-base text-gray-500">Fill in your details and we&apos;ll connect with you on WhatsApp instantly.</p>
               </div>
 
               <div className="rounded-sm overflow-hidden" style={{ border: "1px solid rgba(11,31,58,0.1)" }}>
-                {/* How it works */}
-                <div className="p-8" style={{ background: "#F8F9FC" }}>
-                  <h3 className="text-lg font-bold mb-6" style={{ fontFamily: '"Playfair Display", serif', color: "#0B1F3A" }}>How it works</h3>
-                  <div className="flex flex-col gap-5">
-                    {[
-                      { num: "1", text: "Click the button below to open WhatsApp", icon: "ri-whatsapp-line" },
-                      { num: "2", text: "Fill in your name, phone, email, and service required in the pre-filled message", icon: "ri-edit-line" },
-                      { num: "3", text: "Hit send — our team will reply promptly with free expert guidance", icon: "ri-reply-line" },
-                    ].map((step) => (
-                      <div key={step.num} className="flex items-start gap-4">
-                        <div className="w-9 h-9 flex-shrink-0 flex items-center justify-center rounded-full font-bold text-sm" style={{ background: "#0B1F3A", color: "#C8960C" }}>{step.num}</div>
-                        <div className="flex items-center gap-3 pt-1.5">
-                          <span className="w-5 h-5 flex items-center justify-center flex-shrink-0">
-                            <i className={`${step.icon} text-base`} style={{ color: "#C8960C" }}></i>
-                          </span>
-                          <span className="text-base text-gray-600" style={{ fontFamily: '"DM Sans", sans-serif' }}>{step.text}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+                {/* Form header */}
+                <div className="px-8 py-5 flex items-center gap-3" style={{ background: "#0B1F3A" }}>
+                  <span className="w-8 h-8 flex items-center justify-center">
+                    <i className="ri-whatsapp-line text-2xl text-green-400"></i>
+                  </span>
+                  <span className="text-base font-semibold text-white" style={{ fontFamily: '"Playfair Display", serif' }}>
+                    Send Enquiry on WhatsApp
+                  </span>
+                  <span className="ml-auto text-xs text-white/40">Free · No upfront charges</span>
                 </div>
 
-                {/* CTA button block */}
-                <div className="p-8" style={{ background: "#0B1F3A" }}>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-14 h-14 flex items-center justify-center rounded-full bg-green-500/20 flex-shrink-0">
-                      <i className="ri-whatsapp-line text-3xl text-green-400"></i>
+                {submitted ? (
+                  <div className="p-10 flex flex-col items-center justify-center gap-4 text-center" style={{ background: "#F8F9FC" }}>
+                    <div className="w-16 h-16 flex items-center justify-center rounded-full bg-green-100">
+                      <i className="ri-whatsapp-line text-4xl text-green-500"></i>
                     </div>
-                    <div>
-                      <div className="text-lg font-bold text-white" style={{ fontFamily: '"Playfair Display", serif' }}>Send Details on WhatsApp</div>
-                      <div className="text-sm text-white/55 mt-0.5">Free consultation — no upfront charges</div>
-                    </div>
-                  </div>
-                  <p className="text-sm text-white/60 mb-7 leading-loose" style={{ fontFamily: '"DM Sans", sans-serif' }}>
-                    Fill your details in WhatsApp and our team will assist you quickly. A pre-filled template will open — just add your details and send.
-                  </p>
-                  <a
-                    href={WA_LINK}
-                    target="_blank"
-                    rel="nofollow noreferrer"
-                    onClick={() => trackConversion(WA_LINK)}
-                    className="w-full flex items-center justify-center gap-3 py-5 bg-green-500 hover:bg-green-400 rounded-sm text-white font-bold text-lg cursor-pointer transition-all whitespace-nowrap"
-                    style={{ fontFamily: '"DM Sans", sans-serif' }}
-                  >
-                    <span className="w-6 h-6 flex items-center justify-center">
-                      <i className="ri-whatsapp-line text-2xl"></i>
-                    </span>
-                    Send Details on WhatsApp
-                  </a>
-                  <p className="text-xs text-white/35 text-center mt-4">
-                    Opens WhatsApp with a pre-filled template ready to send
-                  </p>
-                </div>
-
-                {/* Also reachable by */}
-                <div className="p-6 flex flex-col sm:flex-row items-center gap-4" style={{ background: "#FDF3DC", borderTop: "1px solid rgba(200,150,12,0.2)" }}>
-                  <div className="flex-1 text-sm text-gray-600 leading-relaxed">
-                    <strong style={{ color: "#0B1F3A" }}>Also reachable by phone or email</strong>
-                    <br />
-                    <a
-                      href="tel:+919008710698"
-                      onClick={() => trackConversion()}
-                      className="text-sm font-semibold hover:underline cursor-pointer"
-                      style={{ color: "#9e7509" }}
+                    <h3 className="text-xl font-bold" style={{ fontFamily: '"Playfair Display", serif', color: "#0B1F3A" }}>
+                      WhatsApp Opened!
+                    </h3>
+                    <p className="text-sm text-gray-500 max-w-xs leading-relaxed">
+                      Your enquiry has been prepared. Just hit <strong>Send</strong> in WhatsApp and our team will respond within 2 hours.
+                    </p>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="mt-2 px-6 py-2.5 text-sm font-semibold rounded-sm cursor-pointer transition-all hover:opacity-80"
+                      style={{ background: "#0B1F3A", color: "#C8960C" }}
                     >
-                      +91 90087 10698
-                    </a>
-                    &nbsp;&nbsp;·&nbsp;&nbsp;
-                    <a href="mailto:Casa.Approvals@gmail.com" className="text-sm font-semibold hover:underline cursor-pointer" style={{ color: "#9e7509" }}>Casa.Approvals@gmail.com</a>
+                      Submit Another Enquiry
+                    </button>
                   </div>
-                </div>
+                ) : (
+                  <form
+                    data-readdy-form
+                    id="whatsapp-enquiry-form"
+                    onSubmit={handleWhatsAppEnquiry}
+                    className="p-8 flex flex-col gap-5"
+                    style={{ background: "#F8F9FC" }}
+                  >
+                    {/* Row 1: Name + Phone */}
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-xs font-semibold tracking-wider uppercase" style={{ color: "#0B1F3A" }}>
+                          Full Name <span style={{ color: "#C8960C" }}>*</span>
+                        </label>
+                        <input
+                          type="text"
+                          name="name"
+                          required
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Your full name"
+                          className="w-full px-4 py-3 text-sm rounded-sm outline-none transition-all"
+                          style={{
+                            background: "white",
+                            border: "1px solid rgba(11,31,58,0.15)",
+                            color: "#0B1F3A",
+                            fontFamily: '"DM Sans", sans-serif',
+                          }}
+                        />
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-xs font-semibold tracking-wider uppercase" style={{ color: "#0B1F3A" }}>
+                          Phone Number <span style={{ color: "#C8960C" }}>*</span>
+                        </label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          required
+                          value={formData.phone}
+                          onChange={handleChange}
+                          placeholder="Your phone number"
+                          className="w-full px-4 py-3 text-sm rounded-sm outline-none transition-all"
+                          style={{
+                            background: "white",
+                            border: "1px solid rgba(11,31,58,0.15)",
+                            color: "#0B1F3A",
+                            fontFamily: '"DM Sans", sans-serif',
+                          }}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Row 2: Email */}
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-xs font-semibold tracking-wider uppercase" style={{ color: "#0B1F3A" }}>
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="your@email.com"
+                        className="w-full px-4 py-3 text-sm rounded-sm outline-none transition-all"
+                        style={{
+                          background: "white",
+                          border: "1px solid rgba(11,31,58,0.15)",
+                          color: "#0B1F3A",
+                          fontFamily: '"DM Sans", sans-serif',
+                        }}
+                      />
+                    </div>
+
+                    {/* Row 3: Service + Budget */}
+                    <div className="grid sm:grid-cols-2 gap-5">
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-xs font-semibold tracking-wider uppercase" style={{ color: "#0B1F3A" }}>
+                          Service Required <span style={{ color: "#C8960C" }}>*</span>
+                        </label>
+                        <select
+                          name="service"
+                          required
+                          value={formData.service}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 text-sm rounded-sm outline-none transition-all cursor-pointer appearance-none"
+                          style={{
+                            background: "white",
+                            border: "1px solid rgba(11,31,58,0.15)",
+                            color: formData.service ? "#0B1F3A" : "#9ca3af",
+                            fontFamily: '"DM Sans", sans-serif',
+                          }}
+                        >
+                          <option value="" disabled>Select a service</option>
+                          {SERVICE_OPTIONS.map((opt) => (
+                            <option key={opt} value={opt} style={{ color: "#0B1F3A" }}>{opt}</option>
+                          ))}
+                        </select>
+                      </div>
+                      <div className="flex flex-col gap-1.5">
+                        <label className="text-xs font-semibold tracking-wider uppercase" style={{ color: "#0B1F3A" }}>
+                          Budget Range <span style={{ color: "#C8960C" }}>*</span>
+                        </label>
+                        <select
+                          name="budget"
+                          required
+                          value={formData.budget}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 text-sm rounded-sm outline-none transition-all cursor-pointer appearance-none"
+                          style={{
+                            background: "white",
+                            border: "1px solid rgba(11,31,58,0.15)",
+                            color: formData.budget ? "#0B1F3A" : "#9ca3af",
+                            fontFamily: '"DM Sans", sans-serif',
+                          }}
+                        >
+                          <option value="" disabled>Select budget range</option>
+                          {BUDGET_OPTIONS.map((opt) => (
+                            <option key={opt} value={opt} style={{ color: "#0B1F3A" }}>{opt}</option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Row 4: Project Location */}
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-xs font-semibold tracking-wider uppercase" style={{ color: "#0B1F3A" }}>
+                        Project Location <span style={{ color: "#C8960C" }}>*</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="location"
+                        required
+                        value={formData.location}
+                        onChange={handleChange}
+                        placeholder="Area and city"
+                        className="w-full px-4 py-3 text-sm rounded-sm outline-none transition-all"
+                        style={{
+                          background: "white",
+                          border: "1px solid rgba(11,31,58,0.15)",
+                          color: "#0B1F3A",
+                          fontFamily: '"DM Sans", sans-serif',
+                        }}
+                      />
+                    </div>
+
+                    {/* Row 5: Project Brief */}
+                    <div className="flex flex-col gap-1.5">
+                      <label className="text-xs font-semibold tracking-wider uppercase" style={{ color: "#0B1F3A" }}>
+                        Project Brief
+                      </label>
+                      <textarea
+                        name="brief"
+                        value={formData.brief}
+                        onChange={(e) => {
+                          if (e.target.value.length <= 500) handleChange(e);
+                        }}
+                        placeholder="Tell us about your project"
+                        rows={4}
+                        maxLength={500}
+                        className="w-full px-4 py-3 text-sm rounded-sm outline-none transition-all resize-none"
+                        style={{
+                          background: "white",
+                          border: "1px solid rgba(11,31,58,0.15)",
+                          color: "#0B1F3A",
+                          fontFamily: '"DM Sans", sans-serif',
+                        }}
+                      />
+                      <div className="text-right text-xs text-gray-400">{formData.brief.length}/500</div>
+                    </div>
+
+                    {/* Submit Button */}
+                    <button
+                      type="submit"
+                      disabled={submitting || formData.brief.length > 500}
+                      className="w-full flex items-center justify-center gap-3 py-4 text-white font-bold text-base rounded-sm transition-all cursor-pointer whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
+                      style={{
+                        background: submitting ? "#1ebe57" : "#25D366",
+                        fontFamily: '"DM Sans", sans-serif',
+                      }}
+                      onMouseEnter={(e) => { if (!submitting) (e.currentTarget as HTMLButtonElement).style.background = "#1ebe57"; }}
+                      onMouseLeave={(e) => { if (!submitting) (e.currentTarget as HTMLButtonElement).style.background = "#25D366"; }}
+                    >
+                      <span className="w-6 h-6 flex items-center justify-center">
+                        <i className="ri-whatsapp-line text-xl"></i>
+                      </span>
+                      {submitting ? "Opening WhatsApp..." : "Send Enquiry on WhatsApp"}
+                    </button>
+
+                    {/* Note below button */}
+                    <p className="text-xs text-center text-gray-500 leading-relaxed -mt-1">
+                      Your details will be sent directly to our WhatsApp. We respond within 2 hours.
+                    </p>
+                  </form>
+                )}
               </div>
             </div>
 
@@ -228,7 +460,7 @@ export default function ContactPage() {
                 <h2 className="text-2xl font-bold mb-6" style={{ fontFamily: '"Playfair Display", serif', color: "#0B1F3A" }}>Contact Details</h2>
               </div>
               {[
-                { icon: "ri-phone-line", label: "Phone / Call", value: "+91 90087 10698", href: "tel:+919008710698" },
+                { icon: "ri-phone-line", label: "Phone / Call", value: "+91 90009 75046", href: "tel:+919000975046" },
                 { icon: "ri-mail-line", label: "Email", value: "Casa.Approvals@gmail.com", href: "mailto:Casa.Approvals@gmail.com" },
                 { icon: "ri-map-pin-line", label: "Location", value: "Road No. 01, Avenue 07, 4th Floor, Bhooma Plaza, Street 04, near GVK One Mall, Banjara Hills, Hyderabad, Telangana 500034", href: null },
                 { icon: "ri-time-line", label: "Working Hours", value: "Mon–Sat: 9 AM – 7 PM", href: null },
