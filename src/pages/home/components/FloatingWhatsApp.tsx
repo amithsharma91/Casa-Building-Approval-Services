@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useGtagConversion } from "@/hooks/useGtagConversion";
 
 export default function FloatingWhatsApp() {
   const [showTooltip, setShowTooltip] = useState(false);
   const [visible, setVisible] = useState(false);
+  const { trackConversion } = useGtagConversion();
 
   useEffect(() => {
     const t1 = setTimeout(() => setVisible(true), 800);
@@ -12,6 +14,8 @@ export default function FloatingWhatsApp() {
   }, []);
 
   if (!visible) return null;
+
+  const WA_URL = "https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20";
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
@@ -28,9 +32,10 @@ export default function FloatingWhatsApp() {
         </div>
       )}
       <a
-        href="https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
+        href={WA_URL}
         target="_blank"
         rel="nofollow noreferrer"
+        onClick={() => trackConversion(WA_URL)}
         className="relative w-14 h-14 flex items-center justify-center rounded-full bg-green-500 hover:bg-green-400 text-white shadow-xl transition-all duration-300 cursor-pointer hover:scale-110"
         aria-label="Chat on WhatsApp"
       >
