@@ -111,11 +111,11 @@ export default function DocumentsSection() {
                     <i className="ri-phone-line text-base" style={{ color: "#C8960C" }}></i>
                   </span>
                   <a
-                    href="tel:+919008710698"
+                    href="tel:+919000975046"
                     className="text-sm text-white/70 hover:text-white transition-colors cursor-pointer"
                     style={{ fontFamily: '"DM Sans", sans-serif' }}
                   >
-                    +91 90087 10698
+                    +91 90009 75046
                   </a>
                 </div>
                 <div className="flex items-center gap-3">
