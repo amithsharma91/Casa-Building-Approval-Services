@@ -1,3 +1,5 @@
+import { useGtagConversion } from '@/hooks/useGtagConversion';
+
 const services = [
   "Building Permission (GHMC/HMDA)",
   "Layout Permission (HMDA)",
@@ -19,6 +21,8 @@ const quickLinks = [
 ];
 
 export default function Footer() {
+  const { trackConversion } = useGtagConversion();
+  const WA_URL = "https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20";
   const handleNavClick = (href: string) => {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: "smooth" });
@@ -47,6 +51,7 @@ export default function Footer() {
             <div className="flex items-center gap-4 flex-shrink-0">
               <a
                 href="tel:+919008710698"
+                onClick={() => trackConversion()}
                 className="flex items-center gap-2 px-6 py-3.5 rounded-sm border text-white text-sm font-semibold whitespace-nowrap cursor-pointer hover:bg-white/10 transition-all"
                 style={{ borderColor: "rgba(200,150,12,0.4)", fontFamily: '"DM Sans", sans-serif' }}
               >
@@ -56,9 +61,10 @@ export default function Footer() {
                 Call Now
               </a>
               <a
-                href="https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
+                href={WA_URL}
                 target="_blank"
                 rel="nofollow noreferrer"
+                onClick={() => trackConversion(WA_URL)}
                 className="flex items-center gap-2 px-6 py-3.5 rounded-sm bg-green-500 hover:bg-green-400 text-white text-sm font-semibold whitespace-nowrap cursor-pointer transition-all"
                 style={{ fontFamily: '"DM Sans", sans-serif' }}
               >
@@ -94,6 +100,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3">
               <a
                 href="tel:+919008710698"
+                onClick={() => trackConversion()}
                 className="flex items-center gap-3 text-sm text-white/50 hover:text-white transition-colors cursor-pointer"
                 style={{ fontFamily: '"DM Sans", sans-serif' }}
               >
@@ -210,9 +217,10 @@ export default function Footer() {
               </div>
             </div>
             <a
-              href="https://wa.me/919008710698?text=Hi%2C%20I%20would%20like%20to%20enquire%20about%20your%20services.%0A%0AFull%20Name%3A%20%0APhone%20Number%3A%20%0AEmail%20Address%3A%20%0AService%20Required%3A%20%0AMessage%3A%20"
+              href={WA_URL}
               target="_blank"
               rel="nofollow noreferrer"
+              onClick={() => trackConversion(WA_URL)}
               className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-sm bg-green-600 hover:bg-green-500 text-white text-sm font-semibold whitespace-nowrap cursor-pointer transition-all"
               style={{ fontFamily: '"DM Sans", sans-serif' }}
             >
