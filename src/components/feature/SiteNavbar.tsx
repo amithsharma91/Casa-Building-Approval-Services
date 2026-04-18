@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useGtagConversion } from "@/hooks/useGtagConversion";
 
 const LOGO_URL = "https://storage.readdy-site.link/project_files/e935d4ba-d68c-4c45-9f24-abafaff5b522/ee8ae188-79fa-4b7d-8352-80456f8ccb79_IMG_20260327_014746-removebg-preview.png?v=908567f38165471e00a7b0e447a7b9af";
 
@@ -29,6 +30,9 @@ export default function SiteNavbar() {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const navigate = useNavigate();
+  const { trackConversion } = useGtagConversion();
+
+  const WA_URL = "https://wa.me/919008710698";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -183,6 +187,7 @@ export default function SiteNavbar() {
           <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
             <a
               href="tel:+919008710698"
+              onClick={() => trackConversion()}
               className="flex items-center gap-2 px-4 py-2 rounded-sm border text-white text-sm font-medium transition-all whitespace-nowrap cursor-pointer hover:bg-white/10"
               style={{ borderColor: "rgba(200,150,12,0.5)", fontFamily: '"DM Sans", sans-serif' }}
             >
@@ -190,9 +195,10 @@ export default function SiteNavbar() {
               +91 90087 10698
             </a>
             <a
-              href="https://wa.me/919008710698"
+              href={WA_URL}
               target="_blank"
               rel="nofollow noreferrer"
+              onClick={() => trackConversion(WA_URL)}
               className="flex items-center gap-2 px-5 py-2 rounded-sm bg-green-500 text-white text-sm font-semibold hover:bg-green-400 transition-all whitespace-nowrap cursor-pointer"
               style={{ fontFamily: '"DM Sans", sans-serif' }}
             >
@@ -259,11 +265,22 @@ export default function SiteNavbar() {
             ))}
 
             <div className="flex flex-col gap-2 mt-4 pt-4" style={{ borderTop: "1px solid rgba(200,150,12,0.3)" }}>
-              <a href="tel:+919008710698" className="flex items-center justify-center gap-2 py-3 rounded-sm border text-white font-medium text-sm cursor-pointer whitespace-nowrap" style={{ borderColor: "rgba(200,150,12,0.5)" }}>
+              <a
+                href="tel:+919008710698"
+                onClick={() => trackConversion()}
+                className="flex items-center justify-center gap-2 py-3 rounded-sm border text-white font-medium text-sm cursor-pointer whitespace-nowrap"
+                style={{ borderColor: "rgba(200,150,12,0.5)" }}
+              >
                 <i className="ri-phone-line" style={{ color: "#C8960C" }}></i>
                 +91 90087 10698
               </a>
-              <a href="https://wa.me/919008710698" target="_blank" rel="nofollow noreferrer" className="flex items-center justify-center gap-2 py-3 rounded-sm bg-green-500 text-white font-semibold text-sm cursor-pointer whitespace-nowrap">
+              <a
+                href={WA_URL}
+                target="_blank"
+                rel="nofollow noreferrer"
+                onClick={() => trackConversion(WA_URL)}
+                className="flex items-center justify-center gap-2 py-3 rounded-sm bg-green-500 text-white font-semibold text-sm cursor-pointer whitespace-nowrap"
+              >
                 <i className="ri-whatsapp-line"></i>
                 Chat on WhatsApp
               </a>
